@@ -1,0 +1,70 @@
+// ------------------------------------------------------------------
+// IMPORTS
+// ------------------------------------------------------------------
+@import 'config/variables';
+@import 'config/bootstrap';
+
+@import 'components/animation';
+@import 'components/typography';
+@import 'components/classes';
+@import 'components/flexslider';
+
+@import 'layout/header';
+@import 'layout/sidenav';
+@import 'layout/intro';
+@import 'layout/works';
+@import 'layout/about';
+@import 'layout/project';
+@import 'layout/contact';
+@import 'layout/footer';
+
+// ------------------------------------------------------------------
+//	GENERAL ELEMENTS
+// ------------------------------------------------------------------
+body,
+#app {
+  height: 100vh;
+  background: $body-bg;
+  margin: 0;
+}
+
+body {
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: left $speed;
+  left: 0;
+
+  &.is-pushed {
+    overflow: hidden;
+    left: -250px;
+  }
+}
+
+#app {
+  &:after {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    content: ' ';
+    display: block;
+    background: rgba($dark, 0.8);
+    opacity: 0;
+    display: block;
+    transition: opacity $speed, right $speed;
+    z-index: -1;
+    cursor: pointer;
+  }
+  &.is-pushed {
+    // overflow: hidden;
+
+    &:after {
+      opacity: 1;
+      right: 250px;
+      z-index: 9;
+    }
+  }
+}

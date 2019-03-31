@@ -1,0 +1,99 @@
+// -----------------------------------------------------------------
+//	CONTACT ELEMENTS
+// -----------------------------------------------------------------
+#contact {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($black, 0.9);
+  padding: 60px 0;
+  z-index: 200;
+  color: $white;
+  text-align: center;
+  overflow: auto;
+  display: none;
+
+  .wrapper {
+    position: relative;
+  }
+
+  #contact-close {
+    position: absolute;
+    top: -20px;
+    right: 30px;
+  }
+
+  .area {
+    strong {
+      color: $dark-l4;
+    }
+  }
+
+  .social {
+    ul {
+      display: block;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        display: inline-block;
+        margin: 0 10px;
+        color: $dark-l4;
+        font-size: 20px;
+      }
+    }
+  }
+
+  form {
+    div {
+      position: relative;
+
+      i {
+        color: $white;
+        position: absolute;
+        top: 54px;
+        right: 15px;
+
+        &.fa-spin {
+          position: relative;
+          top: 0;
+          right: 0;
+          margin-left: 10px;
+          color: $white;
+          display: none;
+        }
+      }
+
+      input,
+      textarea {
+        border-radius: 20px;
+        padding-right: 60px;
+      }
+    }
+  }
+
+  // TABLET
+  @include media-breakpoint-up(md) {
+    .wrapper {
+      width: 600px;
+    }
+
+    form {
+      .clearfix {
+        & > div {
+          float: left;
+          width: 48%;
+          margin-right: 4%;
+
+          &:last-of-type {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

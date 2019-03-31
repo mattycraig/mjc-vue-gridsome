@@ -1,0 +1,369 @@
+// -----------------------------------------------------------------
+//	WORKS ELEMENTS
+// -----------------------------------------------------------------
+@supports (mix-blend-mode: color) {
+  #works .row .item .overlay:before {
+    mix-blend-mode: color;
+  }
+}
+
+@supports not (mix-blend-mode: color) {
+  #works .row .item .overlay:before {
+    opacity: 0.4;
+  }
+}
+
+#works {
+  @include clearfix;
+
+  .row {
+    @include clearfix;
+    position: relative;
+
+    &.first:before {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin: 0 0 0 -21px;
+      content: ' ';
+      z-index: 2;
+      height: 0;
+      width: 0;
+      border-color: $white transparent transparent;
+      border-width: 20px 20px 20px;
+      border-style: solid;
+    }
+
+    .item {
+      position: relative;
+      background: $dark-l3;
+      height: 400px;
+
+      &:nth-of-type(odd) {
+        background: $dark-l4;
+      }
+
+      .overlay {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background: rgba($secondary, 0.6);
+        transition: $transition-base;
+
+        &:before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: block;
+          content: '';
+          background: $gradient-secondary;
+          z-index: 1;
+          // opacity: 0.4;
+          // mix-blend-mode: color;
+          transition: all $speed;
+        }
+      }
+
+      &:hover {
+        .overlay {
+          background: rgba($secondary, 0.8);
+
+          &:before {
+            opacity: 1;
+          }
+        }
+
+        .copy {
+          h2 {
+            // @include transform(scale(1.05));
+          }
+        }
+      }
+
+      .copy {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: -65px;
+        text-align: center;
+        width: 100%;
+        z-index: 2;
+
+        .area-right {
+          display: none;
+        }
+
+        .sub {
+          display: block;
+          text-align: center;
+          margin: 0;
+          padding: 0;
+          list-style: none;
+
+          li {
+            display: inline-block;
+            margin: 0 10px;
+            font-family: $oswald;
+            font-weight: 400;
+            text-transform: uppercase;
+            color: $dark-l4;
+            font-size: 14px;
+          }
+        }
+
+        h2 {
+          font-size: 30px;
+          line-height: 1;
+          margin: 10px 0 20px;
+          color: $white;
+          // @include transition-default;
+          position: relative;
+          z-index: 3;
+        }
+
+        .btn.btn-primary {
+          &:after {
+            // content: $fa-var-chevron-circle-right;
+            margin-left: 10px;
+            color: $white;
+            opacity: 0;
+            // @include transition-default;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+          }
+
+          &:hover {
+            padding-right: 40px;
+
+            &:after {
+              opacity: 1;
+              right: 15px;
+            }
+          }
+        }
+      }
+
+      &.prj-purplefig {
+        background: url('/images/projects/purplefig/thumb.jpg') no-repeat center
+          center;
+        background-size: cover;
+      }
+
+      &.prj-leatherfoot {
+        background: url('/images/projects/leatherfoot/thumb.jpg') no-repeat
+          center center;
+        background-size: cover;
+      }
+
+      &.prj-pridetoronto {
+        background: url('/images/projects/pridetoronto/thumb.jpg') no-repeat
+          center center;
+        background-size: cover;
+      }
+
+      &.prj-commercecourt {
+        background: url('/images/projects/commercecourt/thumb.jpg') no-repeat
+          center center;
+        background-size: cover;
+      }
+
+      &.prj-glitterbay {
+        background: url('/images/projects/glitterbay/thumb.jpg') no-repeat
+          center center;
+        background-size: cover;
+      }
+
+      &.prj-likeforlike {
+        background: url('/images/projects/likeforlike/thumb.jpg') no-repeat
+          center center;
+        background-size: cover;
+      }
+
+      &.prj-preventchildinjury {
+        background: url('/images/projects/preventchildinjury/thumb.jpg')
+          no-repeat center center;
+        background-size: cover;
+      }
+
+      &.prj-paquinartists {
+        background: url('/images/projects/paquinartists/thumb.jpg') no-repeat
+          center center;
+        background-size: cover;
+      }
+
+      &.prj-annehepfer {
+        background: url('/images/projects/annehepfer/thumb.jpg') no-repeat
+          center center;
+        background-size: cover;
+      }
+
+      &.prj-livingstonstudios {
+        background: url('/images/projects/livingstonstudios/thumb.jpg')
+          no-repeat center center;
+        background-size: cover;
+      }
+
+      &.prj-urbansun {
+        background: url('/images/projects/urbansun/thumb.jpg') no-repeat center
+          center;
+        background-size: cover;
+      }
+
+      &.prj-paquinentertainment {
+        background: url('/images/projects/paquinentertainment/thumb.jpg')
+          no-repeat center center;
+        background-size: cover;
+      }
+
+      &.prj-paradigmquest {
+        background: url('/images/projects/paradigmquest/thumb.jpg') no-repeat
+          center center;
+        background-size: cover;
+      }
+
+      &.prj-astilivingston {
+        background: url('/images/projects/astilivingston/thumb.jpg') no-repeat
+          center center;
+        background-size: cover;
+      }
+
+      &.prj-snowsmart {
+        background: url('/images/projects/snowsmart/thumb.jpg') no-repeat center
+          center;
+        background-size: cover;
+      }
+
+      &.prj-isitworthit {
+        background: url('/images/projects/isitworthit/thumb.jpg') no-repeat
+          center center;
+        background-size: cover;
+      }
+
+      &.prj-decadehomes {
+        background: url('/images/projects/decadehomes/thumb.jpg') no-repeat
+          center center;
+        background-size: cover;
+      }
+
+      &.prj-leslievilletree {
+        background: url('/images/projects/leslievilletree/thumb.jpg') no-repeat
+          center center;
+        background-size: cover;
+      }
+
+      &.prj-silentjoe {
+        background: url('/images/projects/silentjoe/thumb.jpg') no-repeat center
+          center;
+        background-size: cover;
+      }
+
+      &.prj-dkleadership {
+        background: url('/images/projects/dkleadership/thumb.jpg') no-repeat
+          center center;
+        background-size: cover;
+      }
+
+      &.prj-fountaintire {
+        background: url('/images/projects/fountaintire/thumb.jpg') no-repeat
+          center center;
+        background-size: cover;
+      }
+
+      &.prj-molsoncoors {
+        background: url('/images/projects/molsoncoors/thumb.jpg') no-repeat
+          center center;
+        background-size: cover;
+      }
+    }
+  }
+
+  .otherwork {
+    padding: 0;
+
+    .row {
+      .item {
+        height: 250px;
+
+        .copy {
+          margin-top: -50px;
+
+          .sub {
+            li {
+              font-size: 12px;
+              margin: 0 5px;
+            }
+          }
+
+          h2 {
+            font-size: 25px;
+          }
+
+          .btn.btn-primary {
+            &:after {
+              // content: $fa-var-external-link;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // TABLET
+  @include media-breakpoint-up(md) {
+    .row {
+      .item {
+        float: left;
+        width: 50%;
+
+        &.full {
+          width: 100%;
+        }
+      }
+    }
+
+    .otherwork {
+      margin-bottom: 120px;
+    }
+  }
+
+  // DESKTOP
+  @include media-breakpoint-up(lg) {
+    .row {
+      .item {
+        float: left;
+        width: 25%;
+
+        &.full {
+          width: 50%;
+        }
+
+        .copy {
+          & > .clearfix {
+            width: 80%;
+            margin: 0 auto 5px;
+          }
+
+          .area-left {
+            float: left;
+            width: 50%;
+          }
+
+          .area-right {
+            float: right;
+            width: 50%;
+            display: block;
+            text-align: left;
+            color: $white;
+
+            p {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

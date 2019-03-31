@@ -1,0 +1,236 @@
+// ------------------------------------------------------------------
+// REUSABLE ELEMENTS & CLASSES
+// ------------------------------------------------------------------
+.wrapper {
+  @include make-container();
+  @include make-container-max-widths();
+  @include clearfix;
+}
+
+.btn {
+  text-transform: uppercase;
+  font-family: $oswald;
+  letter-spacing: -0.025em;
+  position: relative;
+
+  &-icon {
+    margin-left: 0.625rem; // 10px
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1.25rem; // 20px
+    transition: $transition-base;
+
+    svg {
+      width: 1.25rem; // 20px
+      height: 1.25rem; // 20px
+      display: block;
+    }
+  }
+
+  &:hover {
+    padding-right: 3.125rem; // 50px
+
+    .btn-icon {
+      opacity: 1;
+    }
+  }
+}
+
+// GRADIENTS
+.btn {
+  &.btn-primary,
+  &.btn-outline-primary,
+  &.btn-secondary,
+  &.btn-outline-secondary {
+    color: rgba($white, 0.75);
+
+    &:hover,
+    &:focus {
+      color: $white;
+    }
+  }
+
+  &.btn-primary {
+    background: $gradient;
+  }
+
+  &.btn-outline-primary {
+    &:before {
+      background: $gradient;
+    }
+  }
+
+  &.btn-secondary {
+    background: $gradient-secondary;
+  }
+
+  &.btn-outline-secondary {
+    &:before {
+      background: $gradient-secondary;
+    }
+  }
+
+  &[class*='btn-outline'] {
+    position: relative;
+    border-width: $border-width;
+    border-color: transparent;
+    padding-top: calc(#{$input-btn-padding-y} - #{$border-width});
+    padding-bottom: calc(#{$input-btn-padding-y} - #{$border-width});
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
+
+    &.btn-sm {
+      padding-top: calc(#{$input-btn-padding-y-sm} - #{$border-width});
+      padding-bottom: calc(#{$input-btn-padding-y-sm} - #{$border-width});
+    }
+
+    &.btn-lg {
+      padding-top: calc(#{$input-btn-padding-y-lg} - #{$border-width});
+      padding-bottom: calc(#{$input-btn-padding-y-lg} - #{$border-width});
+    }
+
+    & > .btn-icon {
+      color: $white;
+    }
+
+    &:before,
+    &:after {
+      position: absolute;
+      z-index: -1;
+      content: ' ';
+      display: block;
+      border-radius: $btn-border-radius;
+      transition: all $speed;
+    }
+
+    &:before {
+      top: -$border-width;
+      left: -$border-width;
+      width: calc(100% + #{$border-width * 2});
+      height: calc(100% + #{$border-width * 2});
+    }
+
+    &:after {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba($light, 0.25);
+      transition: background-color $speed;
+    }
+
+    &:hover,
+    &:focus {
+      background: none;
+      color: $white;
+
+      &:after {
+        background: rgba($light, 0);
+      }
+    }
+  }
+}
+
+// VIEW MORE FULL WIDTH BUTTON
+.viewmore {
+  text-align: center;
+  background: $dark-l3;
+  display: block;
+  padding: 35px 20px;
+  color: $white;
+  font-family: $oswald;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: $white;
+
+  i {
+    position: relative;
+    left: 0;
+    opacity: 0;
+    // @include transition-default;
+  }
+
+  &:hover {
+    background: $primary;
+    color: $white;
+
+    i {
+      left: 15px;
+      opacity: 1;
+    }
+  }
+}
+
+// ICON TOOLTIPS
+#menu-close,
+#menu {
+  position: relative;
+
+  &:after {
+    color: $white;
+    font-family: $oswald;
+    font-weight: 400;
+    font-size: 12px;
+    opacity: 0;
+    text-transform: uppercase;
+    // @include transition-default;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 100%;
+  }
+
+  &:hover {
+    &:after {
+      opacity: 1;
+      padding-right: 5px;
+    }
+  }
+}
+
+#menu-close {
+  &:after {
+    content: 'Close';
+  }
+}
+
+#menu {
+  &:after {
+    content: 'Menu';
+  }
+}
+
+// TITLES
+.title {
+  position: relative;
+  font-family: $oswald;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: $dark-l3;
+  font-size: 20px;
+  text-align: center;
+  padding: 40px 0;
+  background: $white;
+
+  span {
+    display: inline-block;
+    padding: 0 40px;
+    background: $white;
+    position: relative;
+    z-index: 2;
+  }
+
+  &:before {
+    content: ' ';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: $light;
+    z-index: 1;
+  }
+}

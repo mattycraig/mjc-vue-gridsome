@@ -1,0 +1,102 @@
+// -----------------------------------------------------------------
+//	FOOTER ELEMENTS
+// -----------------------------------------------------------------
+#footer {
+  background: $dark;
+  padding: 60px 0;
+  @include clearfix;
+  // @extend %columned;
+  text-align: center;
+
+  .col {
+    margin-bottom: 30px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    color: $dark-l3;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  .copyright {
+    font-family: $oswald;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $dark-l3;
+    font-size: 12px;
+  }
+
+  .meta {
+    color: $dark-l3;
+
+    img {
+      display: inline-block;
+    }
+
+    span {
+      display: block;
+      text-align: center;
+      font-family: $oswald;
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: 14px;
+      margin: 10px 0 0;
+    }
+
+    ul {
+      display: block;
+      text-align: center;
+      margin: 20px 0 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        display: inline-block;
+        margin: 0 10px;
+        color: $dark-l4;
+      }
+    }
+  }
+
+  .social {
+    ul {
+      display: block;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        display: inline-block;
+        margin: 0 10px;
+        color: $dark-l4;
+        font-size: 20px;
+      }
+    }
+  }
+
+  // TABLET
+  @include media-breakpoint-up(lg) {
+    .col {
+      margin-bottom: 0;
+    }
+
+    .copyright {
+      padding-top: 40px;
+    }
+
+    .meta {
+      text-align: center;
+    }
+
+    .social {
+      padding-top: 40px;
+    }
+  }
+}

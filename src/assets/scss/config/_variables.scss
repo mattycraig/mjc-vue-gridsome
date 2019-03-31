@@ -1,0 +1,133 @@
+// ------------------------------------------------------------------
+// MJC COLOURS
+// ------------------------------------------------------------------
+$light: #dbdee0;
+$dark-l4: #a2a9ae;
+$dark-l3: #5d6368;
+$dark-l2: #313337;
+$dark-l1: #222325;
+$dark: #161618;
+
+$blue: #195697;
+$blue-alt: #4581cc;
+
+$moon: #2b5876;
+$moon2: #4e4376;
+
+$purple: #664d9e;
+$red: #c63e51;
+$teal: #317d63;
+
+// ------------------------------------------------------------------
+// BOOTSTRAP VARIABLE RESETS
+// ------------------------------------------------------------------
+$primary: $blue;
+$secondary: $dark-l1;
+
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: $light;
+$gray-400: #ced4da;
+$gray-500: $dark-l4;
+$gray-600: $dark-l3;
+$gray-700: $dark-l2;
+$gray-800: $dark-l1;
+$gray-900: $dark;
+$black: #000;
+
+$enable-print-styles: false;
+$enable-responsive-font-sizes: false;
+
+$body-bg: $dark;
+$body-color: $gray-700;
+
+$link-color: $primary;
+$link-decoration: none;
+$link-hover-color: lighten($link-color, 15%);
+$link-hover-decoration: none;
+
+$border-width: 3px;
+
+$border-radius: 6px;
+$border-radius-lg: 8px;
+$border-radius-sm: 4px;
+
+// ----- TODO
+$box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075);
+$box-shadow: 0 0.5rem 1rem rgba($black, 0.15);
+$box-shadow-lg: 0 1rem 3rem rgba($black, 0.175);
+
+// TRANSITIONS
+$speed: 0.3s;
+$transition-base: all $speed ease-in-out;
+$transition-fade: opacity $speed linear;
+$transition-collapse: height $speed ease;
+
+// TYPOGRAPHY
+$font-family-sans-serif: 'Poppins', -apple-system, BlinkMacSystemFont,
+  'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+$headings-font-weight: 700;
+
+// INPUTS & BUTTONS
+$input-btn-padding-y: 0.625rem; // 10px;
+$input-btn-padding-x: 1.25rem; // 20px;
+
+$input-btn-focus-width: 0.125rem; // 2px
+// $input-btn-focus-color: rgba($component-active-bg, 0.25);
+$input-btn-focus-box-shadow: none;
+
+$input-btn-padding-y-sm: 0.5rem; // 8px
+$input-btn-padding-x-sm: $input-btn-padding-x;
+
+$input-btn-padding-y-lg: 1rem; // 16px
+$input-btn-padding-x-lg: $input-btn-padding-x;
+
+$input-btn-border-width: $border-width;
+
+// BUTTONS
+$btn-border-width: 0;
+
+$btn-font-weight: 500;
+$btn-box-shadow: none;
+$btn-active-box-shadow: none;
+
+$btn-border-radius: 6.25rem; // 100px
+$btn-border-radius-lg: $btn-border-radius;
+$btn-border-radius-sm: $btn-border-radius;
+
+$btn-transition: color $speed ease-in-out, background $speed ease-in-out,
+  border-color $speed ease-in-out, box-shadow $speed ease-in-out,
+  padding-right $speed ease-in-out;
+
+// ------------------------------------------------------------------
+// CUSTOM VARIABLES
+// ------------------------------------------------------------------
+$gradient: linear-gradient(to right bottom, $secondary 25%, $primary 100%);
+$gradient-reverse: linear-gradient(to left top, $secondary 25%, $primary 100%);
+
+$gradient-secondary: linear-gradient(
+  to left top,
+  $secondary 25%,
+  $primary 100%
+);
+$gradient-secondary-reverse: linear-gradient(
+  to right bottom,
+  $secondary 25%,
+  $primary 100%
+);
+
+$gradient: $primary;
+$gradient-secondary: $secondary;
+$gradient-reverse: transparent;
+$gradient-secondary-reverse: transparent;
+
+$type-oswald: 'Oswald', sans-serif;
+$oswald: $type-oswald;
+
+$type-poppins: 'Poppins', sans-serif;
+$poppins: $type-poppins;
+
+$amp: Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond,
+  'Times New Roman', serif;

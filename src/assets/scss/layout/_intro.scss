@@ -1,0 +1,442 @@
+// -----------------------------------------------------------------
+//	INTRO ELEMENTS
+// -----------------------------------------------------------------
+@supports (mix-blend-mode: color) {
+  #intro .flexslider .slides > li:after {
+    mix-blend-mode: color;
+  }
+}
+
+@supports not (mix-blend-mode: color) {
+  #intro .flexslider .slides > li:after {
+    opacity: 0.4;
+  }
+}
+
+#intro {
+  height: 100%;
+  background: $dark;
+
+  .flexslider {
+    height: 100%;
+
+    .slides {
+      height: 100%;
+
+      & > li {
+        height: 100%;
+
+        &:after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: block;
+          content: '';
+          background: $gradient;
+          // opacity: 0.4;
+          // mix-blend-mode: color;
+          z-index: -1;
+        }
+      }
+    }
+  }
+
+  &.intro-alt {
+    .flexslider {
+      .slides {
+        & > li {
+          &:after {
+            background: $gradient-secondary;
+          }
+        }
+      }
+    }
+  }
+
+  .flex-direction-nav,
+  .flex-control-nav {
+    a {
+      height: 30px;
+      line-height: 26px;
+      display: block;
+      margin: 0;
+      padding: 0;
+      font-family: $oswald;
+      font-weight: 400;
+      border: 2px solid transparent;
+      color: $white;
+      background: transparent;
+      border-radius: 4px;
+      font-size: 13px;
+      text-transform: uppercase;
+      transition: all $speed;
+      text-align: center;
+    }
+
+    &.flex-control-paging,
+    a.flex-prev,
+    a.flex-next {
+      position: absolute;
+      top: auto;
+      bottom: 20px;
+      z-index: 5;
+      display: block;
+      padding: 0;
+      margin: 0;
+      width: auto;
+      left: auto;
+    }
+
+    &.flex-control-paging {
+      right: 21px + 50px;
+
+      li {
+        margin: 0 1px;
+      }
+
+      a {
+        text-indent: 0;
+        width: 30px;
+        box-shadow: none;
+        cursor: pointer;
+
+        &.flex-active {
+          border-color: rgba($white, 0.1);
+          color: $white;
+          cursor: default;
+        }
+
+        &:hover,
+        &:focus {
+          background: $white;
+          color: $dark-l1;
+
+          &.flex-active {
+            border-color: rgba($white, 0.1);
+            background: transparent;
+            color: $white;
+          }
+        }
+      }
+    }
+
+    a.flex-prev,
+    a.flex-next {
+      width: 50px;
+      right: 0;
+
+      &:hover {
+        color: $dark-l1;
+        background: $white;
+      }
+    }
+
+    a.flex-prev {
+      right: 232px;
+    }
+
+    a.flex-next {
+      right: 20px;
+      left: auto;
+    }
+  }
+
+  li {
+    .wrapper {
+      @include make-container();
+      @include make-container-max-widths();
+    }
+
+    .copy {
+      text-align: center;
+      color: $white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 0 20px;
+      max-width: 400px;
+      width: 100%;
+
+      .sub {
+        display: block;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+          display: inline-block;
+          margin: 0 10px;
+          font-family: $oswald;
+          font-weight: 400;
+          text-transform: uppercase;
+          color: $dark-l4;
+          font-size: 14px;
+        }
+      }
+
+      h1,
+      h2 {
+        font-size: 30px;
+        line-height: 1;
+        margin: 10px 0;
+      }
+
+      p {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .flex-direction-nav,
+  .flex-control-nav {
+    display: none !important;
+  }
+
+  &.intro-home {
+    .flex-direction-nav,
+    .flex-control-nav {
+      @include media-breakpoint-up(md) {
+        display: block !important;
+      }
+    }
+  }
+
+  #panel-intro {
+    background: $dark-l1 url('/images/intro-bkg.jpg') no-repeat top center;
+    background-size: cover;
+
+    .copy {
+      .amp {
+        font-family: $amp;
+        font-weight: normal;
+        font-style: italic;
+      }
+    }
+  }
+
+  #panel-about {
+    background: $dark-l1 url('/images/about-hero-bkg.jpg') no-repeat top center;
+    background-size: cover;
+  }
+
+  #panel-works {
+    background: $dark-l1 url('/images/works-hero-bkg.jpg') no-repeat top center;
+    background-size: cover;
+  }
+
+  .panel-port {
+    .wrapper {
+      position: relative;
+      height: 100%;
+    }
+
+    .thumbnail {
+      display: none;
+    }
+
+    &.port-page {
+      // .sub {
+      //   li {
+      //     display: inline-block;
+      //     margin: 0 10px;
+      //     font-family: $oswald;
+      //     font-weight: 400;
+      //     text-transform: uppercase;
+      //     color: $dark-l4;
+      //     font-size: 14px;
+      //   }
+      // }
+    }
+  }
+
+  #panel-ipv6dev {
+    background: $dark-l1 url('/images/projects/ipv6dev/hero-bkg.jpg') no-repeat
+      top center;
+    background-size: cover;
+  }
+
+  #panel-purplefig {
+    background: $dark-l1 url('/images/projects/purplefig/hero-bkg.jpg')
+      no-repeat top center;
+    background-size: cover;
+  }
+
+  #panel-glitterbay {
+    background: $dark-l1 url('/images/projects/glitterbay/hero-bkg.jpg')
+      no-repeat top center;
+    background-size: cover;
+  }
+
+  #panel-paquinartists {
+    background: $dark-l1 url('/images/projects/paquinartists/hero-bkg.jpg')
+      no-repeat top center;
+    background-size: cover;
+  }
+
+  #panel-leatherfoot {
+    background: $dark-l1 url('/images/projects/leatherfoot/hero-bkg.jpg')
+      no-repeat top center;
+    background-size: cover;
+  }
+
+  #panel-pridetoronto {
+    background: $dark-l1 url('/images/projects/pridetoronto/hero-bkg.jpg')
+      no-repeat top center;
+    background-size: cover;
+  }
+
+  #panel-commercecourt {
+    background: $dark-l1 url('/images/projects/commercecourt/hero-bkg.jpg')
+      no-repeat top center;
+    background-size: cover;
+  }
+
+  #panel-likeforlike {
+    background: $dark-l1 url('/images/projects/likeforlike/hero-bkg.jpg')
+      no-repeat top center;
+    background-size: cover;
+  }
+
+  #panel-preventchildinjury {
+    background: $dark-l1 url('/images/projects/preventchildinjury/hero-bkg.jpg')
+      no-repeat top center;
+    background-size: cover;
+  }
+
+  #panel-annehepfer {
+    background: $dark-l1 url('/images/projects/annehepfer/hero-bkg.jpg')
+      no-repeat top center;
+    background-size: cover;
+  }
+
+  #panel-livingstonstudios {
+    background: $dark-l1 url('/images/projects/livingstonstudios/hero-bkg.jpg')
+      no-repeat top center;
+    background-size: cover;
+  }
+
+  #panel-urbansun {
+    background: $dark-l1 url('/images/projects/urbansun/hero-bkg.jpg') no-repeat
+      top center;
+    background-size: cover;
+  }
+
+  #panel-paquinentertainment {
+    background: $dark-l1
+      url('/images/projects/paquinentertainment/hero-bkg.jpg') no-repeat top
+      center;
+    background-size: cover;
+  }
+
+  #panel-fountaintire {
+    background: $dark-l1 url('/images/projects/fountaintire/hero-bkg.jpg')
+      no-repeat top center;
+    background-size: cover;
+  }
+
+  #panel-molsoncoors {
+    background: $dark-l1 url('/images/projects/molsoncoors/hero-bkg.jpg')
+      no-repeat top center;
+    background-size: cover;
+  }
+
+  #panel-404 {
+    background: $dark-l1 url('/images/404-hero-bkg.jpg') no-repeat top center;
+    background-size: cover;
+  }
+
+  // TABLET
+  @include media-breakpoint-up(md) {
+    .flex-direction-nav,
+    .flex-control-nav {
+      &.flex-control-paging {
+        right: 31px + 50px;
+      }
+
+      a.flex-prev {
+        right: 242px;
+      }
+
+      a.flex-next {
+        right: 30px;
+      }
+    }
+
+    li {
+      .copy {
+        max-width: 600px;
+
+        h1,
+        h2 {
+          font-size: 50px;
+        }
+      }
+    }
+  }
+
+  // DESKTOP
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 0;
+
+    .panel-port {
+      .thumbnail {
+        position: absolute;
+        top: 50%;
+        right: 70px;
+        width: 50%;
+        display: block;
+        transform: translateY(-30%);
+        filter: drop-shadow(12px 22px 22px rgba($black, 0.5));
+      }
+
+      .copy {
+        width: 37.5%;
+        text-align: left;
+        left: 0;
+        transform: translate(0, -30%);
+        padding: 0;
+
+        .sub {
+          text-align: left;
+
+          li:first-child {
+            margin-left: 0;
+          }
+        }
+      }
+
+      &.port-page {
+        .thumbnail {
+          right: auto;
+          left: 70px;
+        }
+
+        .copy {
+          left: auto;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  // DESKTOP LARGE
+  @include media-breakpoint-up(xl) {
+    .panel-port {
+      .thumbnail {
+        width: 52.5%;
+        max-width: 900px;
+        transform: translateY(-40%);
+      }
+
+      .copy {
+        transform: translateY(-40%);
+        width: 35%;
+        left: 0;
+      }
+    }
+  }
+}

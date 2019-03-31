@@ -1,0 +1,14 @@
+/* humanstxt.org */
+        
+/* TEAM */           
+Author: Matthew Jason Craig
+Contact: matt [at] matthewjasoncraig.com
+Twitter: @mattycraig
+Github: mattycraig
+Location: Toronto, Canada
+
+/* SITE */
+Last update: 2014/07/21 
+Standards: HTML5, CSS3
+Components: jQuery, Modernizr, FlexSlider.js, Classie.js, OutdatedBrowser.js
+Software: Sublime Text 3, Transmit, Codekit, MAMP Pro, Photoshop CS6, Paparazzi!, Google Chrome

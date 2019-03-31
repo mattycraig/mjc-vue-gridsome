@@ -1,0 +1,27 @@
+// ------------------------------------------------------------------
+// TYPOGRAPHY ELEMENTS
+// ------------------------------------------------------------------
+::-moz-selection {
+  background: darken($secondary, 10%);
+  color: $white;
+  text-shadow: none;
+}
+::selection {
+  background: darken($secondary, 10%);
+  color: $white;
+  text-shadow: none;
+}
+
+svg {
+  fill: currentColor;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+}

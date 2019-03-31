@@ -1,0 +1,9 @@
+{
+  "root": true,
+  "extends": ["eslint:recommended", "plugin:vue/recommended"],
+  "rules": {
+    "no-undef": "off",
+    "no-unused-vars": "off"
+  },
+  "plugins": ["vue"]
+}

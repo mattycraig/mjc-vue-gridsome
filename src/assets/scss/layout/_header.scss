@@ -1,0 +1,163 @@
+// -----------------------------------------------------------------
+//	HEADER ELEMENTS
+// -----------------------------------------------------------------
+.header {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  transition: left $speed;
+
+  // TABLET
+  @include media-breakpoint-up(md) {
+    top: 50px;
+  }
+
+  // HEADER-CONTAINER
+  &-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  // HEADER-LOGO
+  &-logo {
+    .header-logo-static,
+    .header-logo-fixed {
+      transition: opacity $speed;
+    }
+
+    .header-logo-static {
+      width: 100px;
+    }
+
+    .header-logo-fixed {
+      height: 80px;
+      position: absolute;
+      top: 5px;
+      left: 0;
+      display: none;
+    }
+
+    // TABLET
+    @include media-breakpoint-up(md) {
+      .header-logo-static {
+        width: 175px;
+      }
+
+      .header-logo-fixed {
+        height: 115px;
+        top: -20px;
+      }
+    }
+  }
+
+  // HEADER-TOGGLE
+  &-toggle {
+    font-size: 28px;
+    color: $white;
+    transition: color $speed;
+    display: block;
+
+    svg {
+      transition: transform $speed;
+    }
+
+    &:hover,
+    &.is-active {
+      color: $white;
+
+      svg {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  // HEADER-FIXED
+  &-fixed {
+    position: fixed;
+    top: 0;
+    background: $white;
+    height: 60px;
+    box-shadow: 5px 15px 30px rgba($black, 0.4);
+    margin: 0;
+    transition: left $speed;
+    animation-fill-mode: both;
+    animation-name: fadeInDown;
+    animation-duration: $speed;
+
+    .header-container {
+      align-items: center;
+    }
+
+    .header-logo {
+      animation-name: bounceInDown;
+      animation-duration: $speed * 3;
+      height: 60px;
+      position: relative;
+      transiton: transform $speed;
+
+      &:hover {
+        img {
+          animation-name: tada;
+          animation-duration: $speed * 3;
+        }
+      }
+
+      .header-logo-static {
+        display: none;
+      }
+
+      .header-logo-fixed {
+        display: block;
+      }
+    }
+
+    .header-logo,
+    .header-toggle {
+      animation-delay: $speed;
+      animation-fill-mode: both;
+    }
+
+    .header-toggle {
+      color: $dark-l3;
+
+      &:after {
+        color: $dark-l3;
+      }
+
+      &:hover,
+      &.active {
+        color: $primary;
+      }
+    }
+
+    .header-toggle {
+      animation-name: fadeInDown;
+      animation-duration: $speed;
+    }
+  }
+
+  &.animate-end-window {
+    &.scrolling-down {
+      animation-name: fadeInDown;
+
+      .header-logo {
+        animation-name: bounceInDown;
+      }
+
+      .header-toggle {
+        animation-name: fadeInDown;
+      }
+    }
+  }
+}
+
+.is-pushed {
+  .header.header-fixed {
+    left: -250px;
+  }
+}
